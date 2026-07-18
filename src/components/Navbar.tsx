@@ -53,19 +53,21 @@ export default function Navbar() {
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-8">
           <Logo />
 
-          <ul className="hidden lg:flex items-center gap-9">
-            {navLinks.map((l) => (
-              <li key={l.href}>
-                <a
-                  href={l.href}
-                  className="group relative font-display text-[0.72rem] uppercase tracking-[0.2em] text-cream/75 transition-colors hover:text-gold"
-                >
-                  {l.label}
-                  <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
-                </a>
-              </li>
-            ))}
-          </ul>
+          <div className="hidden lg:flex flex-1 justify-center">
+            <ul className="flex items-center gap-10">
+              {navLinks.map((l) => (
+                <li key={l.href}>
+                  <a
+                    href={l.href}
+                    className="group relative font-display text-[0.72rem] uppercase tracking-[0.2em] text-cream/80 transition-colors hover:text-gold"
+                  >
+                    {l.label}
+                    <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
 
           <div className="hidden lg:block">
             <a href="#booking" className="btn-ink">

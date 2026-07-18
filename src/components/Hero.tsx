@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 const container = {
@@ -32,133 +33,102 @@ function RotatingBadge() {
   );
 }
 
+const heroImages = [
+  "/images/hero.jpg",
+  "/images/portfolio_blackwork.png",
+  "/images/portfolio_realism.png",
+  "/images/portfolio_japanese.png",
+];
+
 export default function Hero() {
+  const [heroIndex, setHeroIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setHeroIndex((current) => (current + 1) % heroImages.length);
+    }, 10000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section id="top" className="relative flex min-h-screen items-center overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0">
-        <motion.img
-          src="/images/hero_bg.png"
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover opacity-40"
-        />
-        <motion.img
-          src="/images/hero.jpg"
-          alt="AGO.ARTS tattoo studio"
-          initial={{ scale: 1.18 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 2.4, ease }}
-          className="h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-noir via-noir/85 to-noir/30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-noir via-transparent to-noir/60" />
-      </div>
+    <section id="top" className="relative overflow-hidden bg-noir">
+      <div className="absolute inset-0 bg-noir" />
+      <div className="relative mx-auto grid min-h-screen max-w-7xl grid-cols-1 gap-10 px-5 py-24 sm:px-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+        <div className="relative z-10">
+          <motion.div variants={container} initial="hidden" animate="show" className="max-w-3xl">
+            <motion.div variants={item} className="mb-5 flex items-center gap-3">
+              <span className="h-px w-16 bg-gold/60" />
+              <span className="eyebrow">EST. 2009 — CUSTOM TATTOO STUDIO</span>
+            </motion.div>
 
-      {/* Floating gold motes */}
-      {[
-        "left-[12%] top-[28%]",
-        "left-[24%] top-[70%]",
-        "left-[60%] top-[22%]",
-        "left-[78%] top-[60%]",
-        "left-[44%] top-[80%]",
-      ].map((pos, i) => (
-        <span
-          key={i}
-          className={`pointer-events-none absolute h-1.5 w-1.5 rounded-full bg-gold/60 blur-[1px] ${pos}`}
-          style={{ animation: `float ${6 + i}s ease-in-out ${i * 0.6}s infinite` }}
-        />
-      ))}
+            <h1 className="font-display text-5xl font-black uppercase leading-[0.9] tracking-[-0.05em] text-cream sm:text-[5rem] lg:text-[6.5rem]">
+              <motion.span variants={item} className="block">Where Skin</motion.span>
+              <motion.span variants={item} className="block">Becomes</motion.span>
+              <motion.span variants={item} className="block text-gold-gradient italic">Legend</motion.span>
+            </h1>
 
-      {/* Content */}
-      <motion.div
-        variants={container}
-        initial="hidden"
-        animate="show"
-        className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-8 pt-28 pb-24"
-      >
-        <motion.div variants={item} className="mb-7 flex items-center gap-4">
-          <span className="h-px w-12 bg-gold/60" />
-          <span className="eyebrow">Est. 2009 — Custom Tattoo Studio</span>
-        </motion.div>
+            <motion.p variants={item} className="mt-8 max-w-xl text-base leading-relaxed text-cream/70 sm:text-lg">
+              A custom tattoo studio crafting one-of-one pieces in black & gold — realism, blackwork and fine line, designed to outlive the trend.
+            </motion.p>
 
-        <h1 className="font-display font-bold leading-[0.92] tracking-tight">
-          <motion.span variants={item} className="block text-5xl sm:text-7xl lg:text-8xl text-cream">
-            Where Skin
-          </motion.span>
-          <motion.span variants={item} className="block text-5xl sm:text-7xl lg:text-8xl text-cream">
-            Becomes
-          </motion.span>
-          <motion.span variants={item} className="block text-shimmer text-6xl sm:text-8xl lg:text-9xl italic" style={{ backgroundSize: "200% auto" }}>
-            Legend
-          </motion.span>
-        </h1>
+            <motion.div variants={item} className="mt-10 flex flex-wrap gap-4">
+              <a href="#booking" className="btn-ink">
+                Book a Consultation
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </a>
+              <a href="#gallery" className="btn-ghost">
+                Explore the Portfolio
+              </a>
+            </motion.div>
+          </motion.div>
+        </div>
 
-        <motion.p
-          variants={item}
-          className="mt-8 max-w-xl text-base sm:text-lg leading-relaxed text-cream/70 font-light"
-        >
-          A custom tattoo studio crafting one-of-one pieces in black &amp; gold —
-          realism, blackwork and fine line, designed to outlive the trend.
-        </motion.p>
-
-        <motion.div variants={item} className="mt-10 flex flex-wrap items-center gap-4">
-          <a href="#booking" className="btn-ink">
-            Book a Consultation
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M5 12h14M13 6l6 6-6 6" />
-            </svg>
-          </a>
-          <a href="#gallery" className="btn-ghost">
-            Explore the Portfolio
-          </a>
-        </motion.div>
-
-        {/* Stats */}
-        <motion.div
-          variants={item}
-          className="mt-16 grid max-w-2xl grid-cols-2 gap-px overflow-hidden border border-gold/15 sm:grid-cols-4"
-        >
-          {[
-            ["15+", "Years"],
-            ["8K+", "Tattoos"],
-            ["4", "Artists"],
-            ["5.0", "Rating"],
-          ].map(([n, l]) => (
-            <div key={l} className="bg-noir-800/60 px-5 py-5 backdrop-blur-sm text-center">
-              <div className="font-display text-2xl sm:text-3xl text-gold-gradient font-bold">{n}</div>
-              <div className="mt-1 text-[0.65rem] uppercase tracking-[0.25em] text-ash">{l}</div>
+        <div className="relative">
+          <div className="grid gap-4 lg:grid-cols-[0.95fr_1.05fr] xl:grid-cols-[1.05fr_0.95fr]">
+            <div className="grid gap-4">
+              <div className="overflow-hidden rounded-[32px] border border-gold/10 bg-noir-900">
+                <motion.img
+                  key={heroIndex}
+                  src={heroImages[heroIndex]}
+                  alt="AGO.ARTS hero"
+                  initial={{ opacity: 0, scale: 1.05 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.8, ease }}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="overflow-hidden rounded-[24px] border border-gold/10 bg-noir-900">
+                  <img src="/images/portfolio_blackwork.png" alt="Tattoo work" className="h-full w-full object-cover" />
+                </div>
+                <div className="overflow-hidden rounded-[24px] border border-gold/10 bg-noir-900">
+                  <img src="/images/portfolio_fineline.png" alt="Tattoo work" className="h-full w-full object-cover" />
+                </div>
+              </div>
             </div>
-          ))}
-        </motion.div>
-      </motion.div>
 
-      {/* Rotating badge */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.6 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 1.6, duration: 0.8, ease }}
-        className="absolute bottom-12 right-8 hidden lg:block"
-      >
-        <RotatingBadge />
-      </motion.div>
+            <div className="grid gap-4">
+              <div className="overflow-hidden rounded-[32px] border border-gold/10 bg-noir-900 row-span-2">
+                <img src="/images/portfolio_japanese.png" alt="Tattoo work" className="h-full w-full object-cover" />
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="overflow-hidden rounded-[24px] border border-gold/10 bg-noir-900">
+                  <img src="/images/portfolio_realism.png" alt="Tattoo work" className="h-full w-full object-cover" />
+                </div>
+                <div className="overflow-hidden rounded-[24px] border border-gold/10 bg-noir-900">
+                  <img src="/images/about.jpg" alt="Studio detail" className="h-full w-full object-cover" />
+                </div>
+              </div>
+            </div>
+          </div>
 
-      {/* Scroll cue */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2 }}
-        className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-3 sm:flex"
-      >
-        <span className="text-[0.6rem] uppercase tracking-[0.4em] text-ash">Scroll</span>
-        <span className="relative h-12 w-px overflow-hidden bg-white/15">
-          <motion.span
-            className="absolute left-0 top-0 h-4 w-px bg-gold"
-            animate={{ y: [-16, 48] }}
-            transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-          />
-        </span>
-      </motion.div>
+          <div className="pointer-events-none absolute inset-0 rounded-[32px] border border-gold/20 opacity-40" />
+          <div className="pointer-events-none absolute right-6 top-6 h-24 w-24 rounded-full bg-gold/10 blur-3xl" />
+        </div>
+      </div>
     </section>
   );
 }
