@@ -133,7 +133,7 @@ export const artists: Artist[] = [
     name: "aGo.ArT",
     role: "Founder · Master Artist",
     specialty: "Fine Line · Botanical",
-    img: "/images/artist_profile_2.webp",
+    img: "/images/artist_profile_1.jpg",
     experience: "15 yrs",
   },
   {
