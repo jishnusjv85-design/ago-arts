@@ -45,7 +45,7 @@ export default function Hero() {
         />
         <motion.img
           src="/images/hero.jpg"
-          alt="Obsidian Ink tattoo studio"
+          alt="AGO.ARTS tattoo studio"
           initial={{ scale: 1.18 }}
           animate={{ scale: 1 }}
           transition={{ duration: 2.4, ease }}

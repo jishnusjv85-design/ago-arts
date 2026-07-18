@@ -57,7 +57,7 @@ export default function Preloader({ onDone }: { onDone: () => void }) {
           animate={{ y: 0 }}
           transition={{ delay: 0.45, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
-          OBSIDIAN
+          AGO.ARTS
         </motion.h1>
       </motion.div>
 
