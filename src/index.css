@@ -118,6 +118,17 @@ body {
   color: transparent;
 }
 
+.text-legend-gold {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  background: linear-gradient(120deg, #f8e7bc 0%, #d4af37 35%, #b18b23 62%, #f9efca 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 14px rgba(212, 175, 55, 0.25), 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
 .text-shimmer {
   background: linear-gradient(
     100deg,
@@ -159,12 +170,13 @@ body {
   font-family: var(--font-display);
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  font-size: 0.78rem;
-  font-weight: 600;
+  font-size: 0.90rem;
+  font-weight: 800;
   padding: 1.05rem 2.2rem;
-  background: linear-gradient(120deg, #f2dc97, #d4af37 45%, #8a6d1f);
-  color: #0a0807;
-  border: 1px solid rgba(242, 220, 151, 0.4);
+  background: linear-gradient(120deg, #f9e9b4, #d4af37 48%, #8a6d1f);
+  color: #090806;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(242, 220, 151, 0.65);
   position: relative;
   overflow: hidden;
   transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s;
@@ -192,11 +204,12 @@ body {
   font-family: var(--font-display);
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  font-size: 0.78rem;
-  font-weight: 500;
+  font-size: 0.85rem;
+  font-weight: 700;
   padding: 1.05rem 2.2rem;
-  color: var(--color-gold);
-  border: 1px solid rgba(212, 175, 55, 0.45);
+  color: #f6e6ae;
+  border: 1px solid rgba(212, 175, 55, 0.65);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.14);
   transition: all 0.4s ease;
 }
 .btn-ghost:hover {

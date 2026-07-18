@@ -64,7 +64,12 @@ export default function Hero() {
             <h1 className="font-display text-5xl font-black uppercase leading-[0.9] tracking-[-0.05em] text-cream sm:text-[5rem] lg:text-[6.5rem]">
               <motion.span variants={item} className="block">Where Skin</motion.span>
               <motion.span variants={item} className="block">Becomes</motion.span>
-              <motion.span variants={item} className="block text-gold-gradient italic">Legend</motion.span>
+              <motion.span
+                variants={item}
+                className="block font-serif-elegant text-5xl font-semibold uppercase tracking-[0.2em] text-legend-gold sm:text-[5.75rem] lg:text-[6.5rem]"
+              >
+                Legend
+              </motion.span>
             </h1>
 
             <motion.p variants={item} className="mt-8 max-w-xl text-base leading-relaxed text-cream/70 sm:text-lg">
