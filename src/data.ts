@@ -26,55 +26,55 @@ export const categories: Category[] = [
 
 export const works: Work[] = [
   {
-    src: "https://images.pexels.com/photos/12802253/pexels-photo-12802253.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+    src: "/images/portfolio_blackwork.png",
     title: "Memento Skull",
     category: "Traditional",
     span: true,
   },
   {
-    src: "https://images.pexels.com/photos/10112805/pexels-photo-10112805.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+    src: "/images/portfolio_realism.png",
     title: "Shadow Ornament",
     category: "Blackwork",
     span: false,
   },
   {
-    src: "https://images.pexels.com/photos/18804974/pexels-photo-18804974.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+    src: "/images/portfolio_japanese.png",
     title: "Crown of Horns",
     category: "Realism",
     span: false,
   },
   {
-    src: "https://images.pexels.com/photos/11619031/pexels-photo-11619031.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+    src: "/images/portfolio_fineline.png",
     title: "Zeus Ascending",
     category: "Realism",
     span: true,
   },
   {
-    src: "https://images.pexels.com/photos/28991536/pexels-photo-28991536.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+    src: "/images/hero.jpg",
     title: "Smoked Linework",
     category: "Blackwork",
     span: false,
   },
   {
-    src: "https://images.pexels.com/photos/5968440/pexels-photo-5968440.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+    src: "/images/about.jpg",
     title: "Whispered Lines",
     category: "Fine Line",
     span: false,
   },
   {
-    src: "https://images.pexels.com/photos/29832878/pexels-photo-29832878.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+    src: "/images/hero_bg.png",
     title: "Botanical Bloom",
     category: "Realism",
     span: true,
   },
   {
-    src: "https://images.pexels.com/photos/4069785/pexels-photo-4069785.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+    src: "/images/portfolio_blackwork.png",
     title: "Heritage Sleeve",
     category: "Traditional",
     span: false,
   },
   {
-    src: "https://images.pexels.com/photos/15588060/pexels-photo-15588060.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+    src: "/images/portfolio_realism.png",
     title: "Spine of Petals",
     category: "Blackwork",
     span: false,
@@ -133,21 +133,21 @@ export const artists: Artist[] = [
     name: "Luna Vance",
     role: "Founder · Master Artist",
     specialty: "Fine Line · Botanical",
-    img: "https://images.pexels.com/photos/26076870/pexels-photo-26076870.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+    img: "/images/artist_profile_1.png",
     experience: "15 yrs",
   },
   {
     name: "Dario Cross",
     role: "Senior Artist",
     specialty: "Blackwork · Sacred Geometry",
-    img: "https://images.pexels.com/photos/31940538/pexels-photo-31940538.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+    img: "/images/artist_profile_2.png",
     experience: "11 yrs",
   },
   {
     name: "Mara Stone",
     role: "Resident Artist",
     specialty: "Realism · Colour",
-    img: "https://images.pexels.com/photos/31940542/pexels-photo-31940542.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+    img: "/images/profile_avatar.jpg",
     experience: "9 yrs",
   },
 ];
@@ -229,8 +229,7 @@ export interface IGPost {
 export const instagramProfile = {
   handle: "@obsidian.ink",
   name: "OBSIDIAN INK STUDIO",
-  avatar:
-    "https://images.pexels.com/photos/4912590/pexels-photo-4912590.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  avatar: "/images/profile_avatar.jpg",
   bio: "Custom black & gold tattoos • Est. 2009 • Booking via DM or the link below",
   link: "https://www.instagram.com/",
   stats: { posts: "842", followers: "128K", following: "312" },
@@ -240,10 +239,8 @@ export const instagramPosts: IGPost[] = [
   {
     id: "ig1",
     type: "reel",
-    thumb:
-      "https://images.pexels.com/videos/4125740/pexels-photo-4125740.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=900",
-    video:
-      "https://videos.pexels.com/video-files/4125740/4125740-uhd_2160_4096_25fps.mp4",
+    thumb: "/images/portfolio_fineline.png",
+    video: "/images/ago___art__2023-06-04_CtEGVeIhhXL_0.mp4",
     caption: "Detail from today's forearm session — single needle, infinite patience. 🖋️",
     likes: "4,128",
     comments: "184",
@@ -252,8 +249,7 @@ export const instagramPosts: IGPost[] = [
   {
     id: "ig2",
     type: "post",
-    thumb:
-      "https://images.pexels.com/photos/33716854/pexels-photo-33716854.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    thumb: "/images/portfolio_blackwork.png",
     caption: "Studio days. Fresh flash dropping this Friday — DM to claim a piece.",
     likes: "2,640",
     comments: "97",

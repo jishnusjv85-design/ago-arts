@@ -1,5 +1,4 @@
 import { Reveal } from "./Reveal";
-import aboutImg from "../assets/about.jpg";
 
 const values = [
   "100% custom, hand-drawn designs",
@@ -18,7 +17,7 @@ export default function About() {
             <div className="absolute -left-4 -top-4 h-full w-full border border-gold/30" />
             <div className="relative overflow-hidden">
               <img
-                src={aboutImg}
+                src="/images/about.jpg"
                 alt="Tattoo artist at work"
                 className="aspect-[4/5] w-full object-cover transition-transform duration-[1.2s] hover:scale-105"
               />

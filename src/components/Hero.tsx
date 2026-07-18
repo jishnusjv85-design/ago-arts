@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import heroImg from "../assets/hero.jpg";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 const container = {
@@ -39,7 +38,13 @@ export default function Hero() {
       {/* Background */}
       <div className="absolute inset-0">
         <motion.img
-          src={heroImg}
+          src="/images/hero_bg.png"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover opacity-40"
+        />
+        <motion.img
+          src="/images/hero.jpg"
           alt="Obsidian Ink tattoo studio"
           initial={{ scale: 1.18 }}
           animate={{ scale: 1 }}
