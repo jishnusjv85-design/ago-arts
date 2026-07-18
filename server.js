@@ -1,38 +1,59 @@
 import express from "express";
-import fs from "node:fs/promises";
 import path from "node:path";
 import { existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
-import { randomUUID } from "node:crypto";
+import mysql from "mysql2/promise";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const app = express();
 const port = Number(process.env.PORT) || 3000;
-const dataFilePath = path.join(__dirname, "data", "bookings.json");
+
+const dbConfig = {
+  host: process.env.DB_HOST || "127.0.0.1",
+  port: Number(process.env.DB_PORT || 3306),
+  user: process.env.DB_USER || "root",
+  password: process.env.DB_PASSWORD || "",
+  database: process.env.DB_NAME || "tattoo_studio",
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0,
+};
+
+const pool = mysql.createPool(dbConfig);
+let databaseReady = false;
 
 app.disable("x-powered-by");
 app.use(express.json({ limit: "1mb" }));
 app.use(express.static(path.join(__dirname, "dist"), { index: false }));
 
-async function readBookings() {
-  if (!existsSync(dataFilePath)) {
-    await fs.mkdir(path.dirname(dataFilePath), { recursive: true });
-    await fs.writeFile(dataFilePath, "[]", "utf8");
-    return [];
+async function initializeDatabase() {
+  if (databaseReady) return;
+
+  await pool.query(`
+    CREATE TABLE IF NOT EXISTS bookings (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+      name VARCHAR(255) NOT NULL,
+      email VARCHAR(255) NOT NULL,
+      phone VARCHAR(50) NOT NULL,
+      style VARCHAR(100) NULL,
+      placement VARCHAR(255) NULL,
+      description TEXT NULL,
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )
+  `);
+
+  databaseReady = true;
+}
+
+app.get("/api/health", async (_req, res) => {
+  try {
+    await initializeDatabase();
+    res.json({ status: "ok", service: "obsidian-ink-api", database: "mysql" });
+  } catch (error) {
+    console.error("Database health check failed:", error);
+    res.status(500).json({ status: "error", service: "obsidian-ink-api", database: "mysql" });
   }
-
-  const raw = await fs.readFile(dataFilePath, "utf8");
-  return JSON.parse(raw);
-}
-
-async function writeBookings(bookings) {
-  await fs.mkdir(path.dirname(dataFilePath), { recursive: true });
-  await fs.writeFile(dataFilePath, JSON.stringify(bookings, null, 2), "utf8");
-}
-
-app.get("/api/health", (_req, res) => {
-  res.json({ status: "ok", service: "obsidian-ink-api" });
 });
 
 app.post("/api/bookings", async (req, res) => {
@@ -43,10 +64,15 @@ app.post("/api/bookings", async (req, res) => {
       return res.status(400).json({ message: "Name, email, and phone are required." });
     }
 
-    const bookings = await readBookings();
+    await initializeDatabase();
+
+    const [result] = await pool.execute(
+      "INSERT INTO bookings (name, email, phone, style, placement, description) VALUES (?, ?, ?, ?, ?, ?)",
+      [name, email, phone, style || "Not sure yet", placement || "Not specified", description || ""]
+    );
+
     const booking = {
-      id: randomUUID(),
-      createdAt: new Date().toISOString(),
+      id: result.insertId,
       name,
       email,
       phone,
@@ -54,9 +80,6 @@ app.post("/api/bookings", async (req, res) => {
       placement: placement || "Not specified",
       description: description || "",
     };
-
-    bookings.push(booking);
-    await writeBookings(bookings);
 
     console.log(`New booking request received from ${email}`);
     return res.status(201).json({ message: "Booking request received.", booking });
@@ -78,4 +101,5 @@ app.get("*", (_req, res) => {
 
 app.listen(port, () => {
   console.log(`Production server listening on http://localhost:${port}`);
+  console.log("MySQL storage is enabled for booking submissions.");
 });
