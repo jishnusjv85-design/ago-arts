@@ -133,11 +133,11 @@ export const artists: Artist[] = [
     name: "aGo.ArT",
     role: "Founder · Master Artist",
     specialty: "Fine Line · Botanical",
-    img: "/images/artist_profile_1.jpg",
+    img: "/images/artist_profile_2.webp",
     experience: "15 yrs",
   },
   {
-    name: "Dario Cross",
+    name: "Mowgli Kid",
     role: "Senior Artist",
     specialty: "Blackwork · Sacred Geometry",
     img: "/images/artist_profile_1.webp",
