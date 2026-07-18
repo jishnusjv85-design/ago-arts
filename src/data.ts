@@ -140,7 +140,7 @@ export const artists: Artist[] = [
     name: "Dario Cross",
     role: "Senior Artist",
     specialty: "Blackwork · Sacred Geometry",
-    img: "/images/artist_profile_2.png",
+    img: "/images/artist_profile_1.webp",
     experience: "11 yrs",
   },
   {
