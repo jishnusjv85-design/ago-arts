@@ -190,7 +190,7 @@ export default function InstagramFeed() {
           <Reveal>
             <div className="mb-4 flex items-center justify-center gap-4">
               <span className="h-px w-10 bg-gold/60" />
-              <span className="eyebrow">@ago.arts — Latest</span>
+              <span className="eyebrow">@AGO.ART — Latest</span>
               <span className="h-px w-10 bg-gold/60" />
             </div>
           </Reveal>

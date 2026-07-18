@@ -116,7 +116,7 @@ export default function Booking() {
                   </div>
                   <h3 className="font-display text-2xl font-bold text-gold-gradient">Request received</h3>
                   <p className="mt-3 max-w-sm text-cream/60">
-                    Thank you for trusting AGO.ARTS. Our team will reach out
+                    Thank you for trusting AGO.ART. Our team will reach out
                     within 48 hours to shape your piece.
                   </p>
                   <button onClick={() => setSent(false)} className="btn-ghost mt-8">

@@ -1,5 +1,5 @@
 /* ============================================================
-   AGO.ARTS — Content
+   AGO.ART — Content
    ============================================================ */
 
 export type Category =
@@ -190,7 +190,7 @@ export interface Testimonial {
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "AGO.ARTS turned a half-formed idea into the most meaningful piece I own. The artistry and care were beyond anything I expected.",
+      "AGO.ART turned a half-formed idea into the most meaningful piece I own. The artistry and care were beyond anything I expected.",
     name: "Elena R.",
     detail: "Full sleeve · 3 sessions",
   },
@@ -227,8 +227,8 @@ export interface IGPost {
 }
 
 export const instagramProfile = {
-  handle: "@ago.arts",
-  name: "AGO.ARTS STUDIO",
+  handle: "@AGO.ART",
+  name: "AGO.ART STUDIO",
   avatar: "/images/ago___art__profile_avatar.jpg",
   bio: "Custom black & gold tattoos • Est. 2009 • Booking via DM or the link below",
   link: "https://www.instagram.com/",
@@ -316,7 +316,7 @@ export const instagramPosts: IGPost[] = [
       "https://images.pexels.com/videos/4125828/pexels-photo-4125828.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=900",
     video:
       "https://videos.pexels.com/video-files/4125828/4125828-uhd_2160_4096_25fps.mp4",
-    caption: "Behind the curtain at AGO.ARTS. ✨",
+    caption: "Behind the curtain at AGO.ART. ✨",
     likes: "6,755",
     comments: "309",
     link: "https://www.instagram.com/",

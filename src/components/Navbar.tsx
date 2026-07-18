@@ -16,7 +16,7 @@ function Logo() {
         </defs>
       </svg>
       <div className="leading-none">
-        <span className="block font-display text-base font-bold tracking-[0.28em] text-cream">AGO.ARTS</span>
+        <span className="block font-display text-base font-bold tracking-[0.28em] text-cream">AGO.ART</span>
         <span className="block font-display text-[0.6rem] tracking-[0.55em] text-gold">INK STUDIO</span>
       </div>
     </a>

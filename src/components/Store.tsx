@@ -58,7 +58,7 @@ export default function Store() {
             </Reveal>
             <Reveal delay={0.05}>
               <h2 className="font-display text-4xl sm:text-5xl font-bold leading-tight text-cream">
-                Own an original <span className="text-gold-gradient italic">AGO.ARTS painting.</span>
+                Own an original <span className="text-gold-gradient italic">AGO.ART painting.</span>
               </h2>
             </Reveal>
             <Reveal delay={0.1}>

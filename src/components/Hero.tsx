@@ -97,7 +97,7 @@ export default function Hero() {
                 <motion.img
                   key={heroIndex}
                   src={heroImages[heroIndex]}
-                  alt="AGO.ARTS hero"
+                  alt="AGO.ART hero"
                   initial={{ opacity: 0, scale: 1.05 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}

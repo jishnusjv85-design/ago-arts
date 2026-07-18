@@ -48,7 +48,7 @@ export default function About() {
           </Reveal>
           <Reveal delay={0.1}>
             <p className="mt-7 max-w-xl leading-relaxed text-cream/70">
-              AGO.ARTS was born from a single belief: that a tattoo should be
+              AGO.ART was born from a single belief: that a tattoo should be
               as permanent in meaning as it is on skin. For over fifteen years,
               our studio has been a sanctuary for those ready to wear their story —
               crafted with patience, obsession, and absolute respect for the craft.

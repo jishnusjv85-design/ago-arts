@@ -19,7 +19,7 @@ export default function Footer() {
                 </defs>
               </svg>
               <div className="leading-none">
-                <span className="block font-display text-lg font-bold tracking-[0.25em] text-cream">AGO.ARTS</span>
+                <span className="block font-display text-lg font-bold tracking-[0.25em] text-cream">AGO.ART</span>
                 <span className="block font-display text-[0.6rem] tracking-[0.5em] text-gold">INK STUDIO</span>
               </div>
             </div>
@@ -76,7 +76,7 @@ export default function Footer() {
 
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-7 sm:flex-row">
           <p className="text-xs text-ash">
-            © {new Date().getFullYear()} AGO.ARTS Studio. All rights reserved.
+            © {new Date().getFullYear()} AGO.ART Studio. All rights reserved.
           </p>
           <div className="flex gap-6 text-xs text-ash">
             <a href="#top" className="transition-colors hover:text-gold">Privacy</a>
