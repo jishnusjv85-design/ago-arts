@@ -130,7 +130,7 @@ export interface Artist {
 
 export const artists: Artist[] = [
   {
-    name: "Luna Vance",
+    name: "aGo.ArT",
     role: "Founder · Master Artist",
     specialty: "Fine Line · Botanical",
     img: "/images/artist_profile_1.png",
@@ -229,7 +229,7 @@ export interface IGPost {
 export const instagramProfile = {
   handle: "@ago.arts",
   name: "AGO.ARTS STUDIO",
-  avatar: "/images/profile_avatar.jpg",
+  avatar: "/images/ago___art__profile_avatar.jpg",
   bio: "Custom black & gold tattoos • Est. 2009 • Booking via DM or the link below",
   link: "https://www.instagram.com/",
   stats: { posts: "842", followers: "128K", following: "312" },

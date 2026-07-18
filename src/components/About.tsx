@@ -78,7 +78,7 @@ export default function About() {
             <div className="mt-10 flex items-center gap-5">
               <a href="#booking" className="btn-ink">Begin Your Piece</a>
               <div>
-                <div className="font-serif-elegant text-3xl italic text-gold-gradient">Luna Vance</div>
+                <div className="font-serif-elegant text-3xl italic text-gold-gradient">aGo.ArT</div>
                 <div className="text-xs uppercase tracking-[0.2em] text-ash">Founder &amp; Master Artist</div>
               </div>
             </div>
