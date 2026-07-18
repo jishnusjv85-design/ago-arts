@@ -20,7 +20,7 @@ function RotatingBadge() {
         </defs>
         <text className="fill-gold" style={{ fontSize: "15px", letterSpacing: "3.5px", fontFamily: "Cinzel, serif" }}>
           <textPath href="#heroCircle" startOffset="0">
-            • OBSIDIAN INK • CUSTOM TATTOO • EST 2009
+            • Art & Tattoo INK • CUSTOM TATTOO • EST 2009
           </textPath>
         </text>
       </svg>

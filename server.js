@@ -49,10 +49,10 @@ async function initializeDatabase() {
 app.get("/api/health", async (_req, res) => {
   try {
     await initializeDatabase();
-    res.json({ status: "ok", service: "obsidian-ink-api", database: "mysql" });
+    res.json({ status: "ok", service: "Art & Tattoo-ink-api", database: "mysql" });
   } catch (error) {
     console.error("Database health check failed:", error);
-    res.status(500).json({ status: "error", service: "obsidian-ink-api", database: "mysql" });
+    res.status(500).json({ status: "error", service: "Art & Tattoo-ink-api", database: "mysql" });
   }
 });
 
