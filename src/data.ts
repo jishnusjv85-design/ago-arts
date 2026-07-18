@@ -143,13 +143,6 @@ export const artists: Artist[] = [
     img: "/images/artist_profile_1.webp",
     experience: "11 yrs",
   },
-  {
-    name: "Mara Stone",
-    role: "Resident Artist",
-    specialty: "Realism · Colour",
-    img: "/images/profile_avatar.jpg",
-    experience: "9 yrs",
-  },
 ];
 
 export interface Step {
