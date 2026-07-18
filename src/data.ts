@@ -333,12 +333,49 @@ export const instagramPosts: IGPost[] = [
   },
 ];
 
+export interface StoreItem {
+  id: string;
+  title: string;
+  description: string;
+  price: number;
+  size: string;
+  image: string;
+}
+
+export const storeItems: StoreItem[] = [
+  {
+    id: "canvas-01",
+    title: "Aureate Ritual",
+    description: "Hand-painted studio canvas with gilded ink details and premium gallery finish.",
+    price: 2850,
+    size: "90 x 120 cm",
+    image: "/images/portfolio_japanese.png",
+  },
+  {
+    id: "canvas-02",
+    title: "Noir Geometry",
+    description: "Limited-edition dark composition with intricate linework and metallic accent.",
+    price: 1980,
+    size: "80 x 100 cm",
+    image: "/images/portfolio_blackwork.png",
+  },
+  {
+    id: "canvas-03",
+    title: "Elemental Portrait",
+    description: "Original realism painting on gallery-grade canvas, signed and numbered.",
+    price: 3200,
+    size: "100 x 130 cm",
+    image: "/images/portfolio_realism.png",
+  },
+];
+
 export const navLinks = [
   { label: "Studio", href: "#about" },
   { label: "Craft", href: "#specialties" },
   { label: "Gallery", href: "#gallery" },
   { label: "Feed", href: "#instagram" },
   { label: "Artists", href: "#artists" },
+  { label: "Store", href: "#store" },
   { label: "Process", href: "#process" },
   { label: "Contact", href: "#booking" },
 ];

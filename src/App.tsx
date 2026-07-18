@@ -11,6 +11,7 @@ import Artists from "./components/Artists";
 import Process from "./components/Process";
 import Testimonials from "./components/Testimonials";
 import InstagramFeed from "./components/InstagramFeed";
+import Store from "./components/Store";
 import Booking from "./components/Booking";
 import Footer from "./components/Footer";
 
@@ -81,6 +82,7 @@ export default function App() {
         <About />
         <Specialties />
         <Gallery />
+        <Store />
         <Artists />
         <Process />
         <Testimonials />

@@ -4,7 +4,7 @@ import { submitBooking } from "../services/bookingService";
 
 const info = [
   { label: "Visit the Studio", value: "47 Ironworks Lane, East District", icon: "M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" },
-  { label: "Call or Text", value: "+1 (415) 902-7788", icon: "M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z" },
+  { label: "Call or Text", value: "9947200345", icon: "M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z" },
   { label: "Email", value: "hello@obsidianink.studio", icon: "M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z M22 6l-10 7L2 6" },
 ];
 
@@ -130,7 +130,7 @@ export default function Booking() {
                     <Field label="Email" name="email" type="email" placeholder="jane@email.com" />
                   </div>
                   <div className="grid gap-5 sm:grid-cols-2">
-                    <Field label="Phone" name="phone" placeholder="+1 415 000 0000" />
+                    <Field label="Phone" name="phone" placeholder="9947200345" />
                     <div>
                       <label className="mb-2 block text-[0.62rem] uppercase tracking-[0.25em] text-ash">Preferred Style</label>
                       <select name="style" className="w-full border border-white/10 bg-noir px-4 py-3 text-sm text-cream outline-none transition-colors focus:border-gold">
